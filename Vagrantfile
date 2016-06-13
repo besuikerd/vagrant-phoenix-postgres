@@ -13,5 +13,4 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :shell, path: "VagrantConfig/bootstrap.sh"
   config.vm.provision :shell, path: "VagrantConfig/install-phoenix.sh", privileged: false
-  config.vm.provision :shell, path: "VagrantConfig/setup-backend.sh", privileged: false
 end

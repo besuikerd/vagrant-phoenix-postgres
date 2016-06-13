@@ -10,4 +10,10 @@ if [ -z "$(mix archive | grep phoenix)" ]; then
   yes | mix local.rebar
 
   sudo npm install -g brunch
+
+  #setup postgres user for ecto
+  cat << END | sudo su postgres -c psql
+  CREATE USER ecto WITH PASSWORD 'ecto';
+  ALTER ROLE ecto WITH LOGIN CREATEDB;
+  END
 fi
