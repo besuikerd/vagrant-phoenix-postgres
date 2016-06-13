@@ -15,5 +15,5 @@ if [ -z "$(mix archive | grep phoenix)" ]; then
   cat << END | sudo su postgres -c psql
   CREATE USER ecto WITH PASSWORD 'ecto';
   ALTER ROLE ecto WITH LOGIN CREATEDB;
-  END
+END
 fi
